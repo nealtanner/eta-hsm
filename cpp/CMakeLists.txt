@@ -29,11 +29,8 @@ else()
     FetchContent_MakeAvailable(googletest)
 endif()
 
-# wise_enum doesn't seem to provide a config.cmake file, but since it is header only,
-# we can probably get away with just adding it to the include path
-# find_package(wise_enum REQUIRED)
-include_directories(/usr/local/include/wise_enum)
-
+# TODO: replace shenanigans below with find_package()
+# find_package(WiseEnum REQUIRED)
 if(EXISTS "/usr/local/include/wise_enum/wise_enum.h")
     message("Found previously installed wise_enum library")
     include_directories(/usr/local/include/wise_enum)
@@ -53,12 +50,12 @@ else()
     include_directories(SYSTEM ${FETCHCONTENT_BASE_DIR})
 endif()
 
-add_library(eta_hsm_lib
+add_library(eta_hsm
     Hsm.cpp
     AutoLoggedStateMachine.cpp
 )
-generate_export_header(eta_hsm_lib)
-install(TARGETS eta_hsm_lib  EXPORT EtaHsmTargets
+generate_export_header(eta_hsm)
+install(TARGETS eta_hsm  EXPORT EtaHsmTargets
         DESTINATION lib)
 install(
     FILES

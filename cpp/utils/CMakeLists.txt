@@ -1,11 +1,11 @@
 
-add_library(utils_lib
+add_library(eta_hsm_utils
         EventBucket.cpp
         Timer.cpp
         TimeTracker.cpp
 )
-generate_export_header(utils_lib)
-install(TARGETS utils_lib  EXPORT EtaHsmTargets
+generate_export_header(eta_hsm_utils)
+install(TARGETS eta_hsm_utils  EXPORT EtaHsmTargets
         DESTINATION lib)
 install(
         FILES
