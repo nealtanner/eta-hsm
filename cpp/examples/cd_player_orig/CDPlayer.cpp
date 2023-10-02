@@ -1,8 +1,8 @@
 // CDPlayer.cpp
 #include <chrono>
 
-#include "../../Hsm.hpp"
-#include "../../utils/TestLog.hpp"
+#include "eta_hsm/Hsm.hpp"
+#include "eta_hsm/utils/TestLog.hpp"
 
 namespace eta_hsm {
 namespace examples {

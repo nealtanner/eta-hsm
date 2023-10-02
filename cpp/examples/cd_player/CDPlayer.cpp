@@ -4,7 +4,7 @@
 
 #include <chrono>
 
-#include "../../utils/TestLog.hpp"
+#include "eta_hsm/utils/TestLog.hpp"
 
 namespace eta_hsm {
 namespace examples {
