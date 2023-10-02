@@ -23,6 +23,7 @@ else()
     message("Did not find previously installed googletest library, will download...")
     FetchContent_Declare(googletest
             GIT_REPOSITORY https://github.com/google/googletest.git
+            GIT_TAG v1.14.0
     )
     # For Windows: Prevent overriding the parent project's compiler/linker settings
     set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
@@ -38,7 +39,7 @@ else()
     message("Did not find previously installed wise_enum library, will download...")
     FetchContent_Declare(WiseEnum
             GIT_REPOSITORY https://github.com/quicknir/wise_enum.git
-            GIT_TAG v1.14.0
+            GIT_TAG master
     )
     FetchContent_MakeAvailable(WiseEnum)
     # TODO: revise wise_enum include solution
