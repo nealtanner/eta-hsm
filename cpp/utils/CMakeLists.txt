@@ -4,9 +4,17 @@ add_library(utils_lib
         Timer.cpp
         TimeTracker.cpp
 )
-
-target_link_libraries(utils_lib
-        wise_enum
+generate_export_header(utils_lib)
+install(TARGETS utils_lib  EXPORT EtaHsmTargets
+        DESTINATION lib)
+install(
+        FILES
+        EventBucket.hpp
+        FakeClock.hpp
+        TestLog.hpp
+        Timer.hpp
+        TimeTracker.hpp
+        DESTINATION include/eta_hsm/utils
 )
 
 add_subdirectory(tests)

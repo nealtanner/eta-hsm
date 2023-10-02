@@ -13,6 +13,8 @@ endif ()
 
 include(CTest)
 include(FetchContent)
+include(GenerateExportHeader)
+include(CMakePackageConfigHelpers)
 
 find_package(GTest)
 if(GTest_FOUND)
@@ -26,7 +28,6 @@ else()
     set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
     FetchContent_MakeAvailable(googletest)
 endif()
-
 
 # wise_enum doesn't seem to provide a config.cmake file, but since it is header only,
 # we can probably get away with just adding it to the include path
@@ -56,6 +57,51 @@ add_library(eta_hsm_lib
     Hsm.cpp
     AutoLoggedStateMachine.cpp
 )
+generate_export_header(eta_hsm_lib)
+install(TARGETS eta_hsm_lib  EXPORT EtaHsmTargets
+        DESTINATION lib)
+install(
+    FILES
+        Hsm.hpp
+        Hsm-inl.hpp
+        AutoLoggedStateMachine.hpp
+    DESTINATION include/eta_hsm
+)
+
+write_basic_package_version_file(
+        "${CMAKE_CURRENT_BINARY_DIR}/EtaHsmConfigVersion.cmake"
+        VERSION ${EtaHsm_VERSION}
+        COMPATIBILITY AnyNewerVersion
+)
+
+export(EXPORT EtaHsmTargets
+        FILE "${CMAKE_CURRENT_BINARY_DIR}/EtaHsmTargets.cmake"
+        NAMESPACE EtaHsm::
+)
+configure_file(cmake/EtaHsmConfig.cmake
+        "${CMAKE_CURRENT_BINARY_DIR}/EtaHsmConfig.cmake"
+        COPYONLY
+)
+
+set(ConfigPackageLocation lib/cmake/EtaHsm)
+install(EXPORT EtaHsmTargets
+    FILE
+        EtaHsmTargets.cmake
+    NAMESPACE
+        EtaHsm::
+    DESTINATION
+        ${ConfigPackageLocation}
+)
+install(
+        FILES
+        cmake/EtaHsmConfig.cmake
+        "${CMAKE_CURRENT_BINARY_DIR}/EtaHsmConfigVersion.cmake"
+        DESTINATION
+        ${ConfigPackageLocation}
+        COMPONENT
+        Devel
+)
+
 
 add_subdirectory(examples)
 add_subdirectory(tests)
