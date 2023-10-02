@@ -38,7 +38,7 @@ else()
     message("Did not find previously installed wise_enum library, will download...")
     FetchContent_Declare(WiseEnum
             GIT_REPOSITORY https://github.com/quicknir/wise_enum.git
-            GIT_TAG master
+            GIT_TAG v1.14.0
     )
     FetchContent_MakeAvailable(WiseEnum)
     # TODO: revise wise_enum include solution
