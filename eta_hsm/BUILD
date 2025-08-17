@@ -10,13 +10,13 @@ cc_library(
         "AutoLoggedStateMachine.hpp",
     ],
     hdrs = [
-        "eta_hsm/Hsm.hpp",
-        "eta_hsm/Hsm-inl.hpp",
-        "eta_hsm/AutoLoggedStateMachine.hpp",
+        "Hsm.hpp",
+        "Hsm-inl.hpp",
+        "AutoLoggedStateMachine.hpp",
     ],
     visibility = ["//visibility:public"],
     deps = [
-        "//eta_hsm/utils"
+        "//eta_hsm/utils",
         "@com_github_quicknir_wise_enum//:wise_enum",
     ]
 )

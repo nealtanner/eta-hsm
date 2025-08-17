@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include <cstddef>
 #include <deque>
 #include <functional>
 #include <queue>
