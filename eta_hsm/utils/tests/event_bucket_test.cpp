@@ -1,8 +1,8 @@
 // eta_hsm/utils/tests/event_bucket_test.cpp
 #include <gtest/gtest.h>
 
-#include "../EventBucket.hpp"
-#include "../TestLog.hpp"
+#include "eta_hsm/utils/EventBucket.hpp"
+#include "eta_hsm/utils/TestLog.hpp"
 
 namespace eta_hsm {
 namespace utils {

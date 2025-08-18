@@ -3,8 +3,8 @@
 
 #include <string>
 
-#include "../FakeClock.hpp"
-#include "../TimeTracker.hpp"
+#include "eta_hsm/utils/FakeClock.hpp"
+#include "eta_hsm/utils/TimeTracker.hpp"
 #include "wise_enum/wise_enum.h"
 
 namespace eta_hsm {

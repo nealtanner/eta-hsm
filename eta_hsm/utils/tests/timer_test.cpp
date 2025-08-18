@@ -1,12 +1,12 @@
 // timer_test.cpp
 
-#include "../Timer.hpp"
+#include "eta_hsm/utils/Timer.hpp"
 
 #include <gtest/gtest.h>
 
 #include <chrono>
 
-#include "../FakeClock.hpp"
+#include "eta_hsm/utils/FakeClock.hpp"
 
 namespace eta_hsm {
 namespace utils {
