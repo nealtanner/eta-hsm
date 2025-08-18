@@ -4,9 +4,9 @@
 #include <memory>
 #include <queue>
 
-#include "../../AutoLoggedStateMachine.hpp"
-#include "../../utils/TestLog.hpp"
-#include "../../utils/Timer.hpp"
+#include "eta_hsm/AutoLoggedStateMachine.hpp"
+#include "eta_hsm/utils/TestLog.hpp"
+#include "eta_hsm/utils/Timer.hpp"
 #include "wise_enum/wise_enum.h"
 
 namespace eta_hsm {

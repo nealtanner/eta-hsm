@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "../../Hsm.hpp"
+#include "eta_hsm/Hsm.hpp"
 #include "../HsmMacros.hpp"
 #include "../event/EventBucket.hpp"
 #include "../event/Timer.hpp"
