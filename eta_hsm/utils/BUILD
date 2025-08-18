@@ -4,18 +4,18 @@ cc_library(
     name = "utils",
     srcs = [
         "EventBucket.cpp",
-        "Timer.cpp",
         "TimeTracker.cpp",
+        "Timer.cpp",
     ],
     hdrs = [
         "EventBucket.hpp",
         "FakeClock.hpp",
         "TestLog.hpp",
-        "Timer.hpp",
         "TimeTracker.hpp",
+        "Timer.hpp",
     ],
     visibility = ["//visibility:public"],
     deps = [
         "@com_github_quicknir_wise_enum//:wise_enum",
-    ]
+    ],
 )
