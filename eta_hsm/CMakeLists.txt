@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.10.2)
 
 project(EtaHsm VERSION 1.0.0 LANGUAGES CXX)
+include_directories(${CMAKE_SOURCE_DIR}/..)  # Support absolute imports
 
 # Default to C++17
 if (NOT CMAKE_CXX_STANDARD)
