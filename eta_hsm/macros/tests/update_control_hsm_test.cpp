@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../example/UpdateControlHsm.hpp"
+#include "eta_hsm/macros/example/UpdateControlHsm.hpp"
 
 class ExampleControlTest : public ::testing::Test {
 protected:

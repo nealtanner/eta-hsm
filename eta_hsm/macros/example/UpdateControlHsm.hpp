@@ -2,10 +2,10 @@
 #pragma once
 
 #include "eta_hsm/Hsm.hpp"
-#include "../HsmMacros.hpp"
-#include "../event/EventBucket.hpp"
-#include "../event/Timer.hpp"
-//#include "../time_tracker/TimeTracker.hpp"
+#include "eta_hsm/macros/HsmMacros.hpp"
+#include "eta_hsm/utils/EventBucket.hpp"
+#include "eta_hsm/utils/Timer.hpp"
+// #include "eta_hsm/utils/TimeTracker.hpp"
 
 #include <chrono>
 #include <cstddef>
