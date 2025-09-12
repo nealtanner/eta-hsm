@@ -1,6 +1,16 @@
 
 # `HsmMacros.hpp`
-The `HsmMacros` module is at first blush an easier way to declare the HSM states via the following macros:
+
+**⚠️ WARNING: HsmMacros is not currently supported.**
+
+This is functionality that was not part of the original `eta-hsm` implementation, but was added
+later within a project that used `eta-hsm` before it was open-sourced.  I have not invested to time
+to get it to work in this (now open-sourced) stand-alone version of `eta-hsm`.  If someone else
+finds this useful and wants to help get it working, please contact me.
+
+---
+
+The `HsmMacros` module is an attempt at an easier way to declare the HSM states via the following macros:
 
 ```cpp
 #define ETA_HSM_TOP_STATE(controller, name)
