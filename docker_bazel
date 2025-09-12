@@ -1,0 +1,28 @@
+#! /bin/bash
+# This is based on https://bazel.build/install/docker-container
+
+set -euo pipefail
+
+main() {
+  readonly BUILD_OUT='/tmp/build_out'
+  readonly VERSION=8.3.1
+  readonly USER="$(id -u)"
+  readonly THIS_DIR="$(realpath $(dirname $0))"
+
+  if [[ ! -e "${BUILD_OUT}" ]] ; then
+    (set -x && mkdir "${BUILD_OUT}")
+  fi
+
+  set -x
+  docker run \
+    -e USER="${USER}" \
+    -u="${USER}" \
+    -v "${THIS_DIR}":/src/workspace \
+    -v "${BUILD_OUT}":"${BUILD_OUT}" \
+    -w /src/workspace \
+    gcr.io/bazel-public/bazel:${VERSION} \
+    --output_user_root="${BUILD_OUT}" \
+    $@
+}
+
+main $@

@@ -23,7 +23,7 @@ jobs:
         uses: jidicula/clang-format-action@v4.11.0
         with:
           clang-format-version: '14'
-          check-path: 'cpp'
+          check-path: 'eta_hsm'
           exclude-regex: ''
 
   unit_tests:
@@ -37,7 +37,7 @@ jobs:
       - name: CMake
         run: |
           mkdir build
-          cmake -S cpp -B build
+          cmake -S eta_hsm -B build
           ls build/_deps
       - name: Build
         working-directory: build
