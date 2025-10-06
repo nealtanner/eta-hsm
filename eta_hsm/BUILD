@@ -1,3 +1,4 @@
+load("@aspect_rules_py//py:defs.bzl", "py_library")
 load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_library(
@@ -19,4 +20,10 @@ cc_library(
         "//eta_hsm/utils",
         "@com_github_quicknir_wise_enum//:wise_enum",
     ],
+)
+
+py_library(
+    name = "parser",
+    srcs = ["//python:parser.py"],
+    visibility = ["//visibility:public"],
 )

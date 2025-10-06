@@ -4,9 +4,11 @@ module(
 )
 
 bazel_dep(name = "rules_cc", version = "0.2.0")
+bazel_dep(name = "aspect_rules_py", version = "1.6.4-rc2")
 bazel_dep(name = "googletest", version = "1.17.0")
 
 http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
 http_archive(
     name = "com_github_quicknir_wise_enum",
     build_file = "@//tools:wise_enum.BUILD",
